@@ -326,10 +326,10 @@ class AnchorGenerator:
         assert self.num_levels == len(featmap_sizes)
         multi_level_anchors = []
         for i in range(self.num_levels):
-            anchors = self.single_level_grid_anchors(
-                self.base_anchors[i].to(device),
+            anchors = self.single_level_grid_priors(
+                # self.base_anchors[i].to(device),
                 featmap_sizes[i],
-                self.strides[i],
+                level_idx=i,
                 device=device)
             multi_level_anchors.append(anchors)
         return multi_level_anchors

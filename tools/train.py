@@ -27,7 +27,7 @@ def parse_args():
                         default='/home/qiyuan/2021summer/mmdetection/work',
                         help='the dir to save logs and models')
     parser.add_argument('--resume-from',
-                        default='/home/qiyuan/2021summer/mmdetection/work',
+                        # default='/home/qiyuan/2021summer/mmdetection/work',
                         help='the checkpoint file to resume from')
     parser.add_argument(
         '--no-validate',

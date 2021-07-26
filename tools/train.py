@@ -35,7 +35,7 @@ def parse_args():
         help='whether not to evaluate the checkpoint during training')
     group_gpus = parser.add_mutually_exclusive_group()
     group_gpus.add_argument('--gpus',
-                            default=1,
+                            default=2,
                             type=int,
                             help='number of gpus to use '
                                  '(only applicable to non-distributed training)')

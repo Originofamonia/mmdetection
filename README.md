@@ -7,6 +7,7 @@
 Documentation: https://mmdetection.readthedocs.io/
 
 ## Introduction
+`python -m torch.distributed.run --nproc_per_node=2 train.py`
 
 English | [简体中文](README_zh-CN.md)
 

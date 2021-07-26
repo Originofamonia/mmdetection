@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from mmcv.cnn import ConvModule, DepthwiseSeparableConvModule
 from mmcv.runner import force_fp32
 
-from mmdet.core import (build_anchor_generator, build_assigner,
+from mmdet.core import (build_anchor_generator, build_assigner, build_prior_generator,
                         build_bbox_coder, build_sampler, multi_apply)
 from ..builder import HEADS
 from ..losses import smooth_l1_loss
@@ -85,7 +85,7 @@ class SSDHead(AnchorHead):
         self.act_cfg = act_cfg
 
         self.cls_out_channels = num_classes + 1  # add background class
-        self.anchor_generator = build_anchor_generator(anchor_generator)
+        self.anchor_generator = build_prior_generator(anchor_generator)
         self.num_anchors = self.anchor_generator.num_base_anchors
 
         self._init_layers()

@@ -3,7 +3,7 @@ import torch.nn as nn
 from mmcv.ops import DeformConv2d, MaskedConv2d
 from mmcv.runner import BaseModule, force_fp32
 
-from mmdet.core import (anchor_inside_flags, build_anchor_generator,
+from mmdet.core import (anchor_inside_flags, build_anchor_generator, build_prior_generator,
                         build_assigner, build_bbox_coder, build_sampler,
                         calc_region, images_to_levels, multi_apply,
                         multiclass_nms, unmap)
@@ -151,9 +151,9 @@ class GuidedAnchorHead(AnchorHead):
                 square_anchor_generator['scales'][0])
         assert (approx_anchor_generator['strides'] ==
                 square_anchor_generator['strides'])
-        self.approx_anchor_generator = build_anchor_generator(
+        self.approx_anchor_generator = build_prior_generator(
             approx_anchor_generator)
-        self.square_anchor_generator = build_anchor_generator(
+        self.square_anchor_generator = build_prior_generator(
             square_anchor_generator)
         self.approxs_per_octave = self.approx_anchor_generator \
             .num_base_anchors[0]

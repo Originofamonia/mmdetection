@@ -482,7 +482,7 @@ def test_anchor_generator_with_tuples():
         ratios=[[2], [2, 3], [2, 3], [2, 3], [2], [2]])
 
     featmap_sizes = [(38, 38), (19, 19), (10, 10), (5, 5), (3, 3), (1, 1)]
-    anchor_generator = build_anchor_generator(anchor_generator_cfg)
+    anchor_generator = build_prior_generator(anchor_generator_cfg)
     anchors = anchor_generator.grid_anchors(featmap_sizes, device)
 
     anchor_generator_cfg_tuples = dict(
@@ -493,7 +493,7 @@ def test_anchor_generator_with_tuples():
         strides=[(8, 8), (16, 16), (32, 32), (64, 64), (100, 100), (300, 300)],
         ratios=[[2], [2, 3], [2, 3], [2, 3], [2], [2]])
 
-    anchor_generator_tuples = build_anchor_generator(
+    anchor_generator_tuples = build_prior_generator(
         anchor_generator_cfg_tuples)
     anchors_tuples = anchor_generator_tuples.grid_anchors(
         featmap_sizes, device)

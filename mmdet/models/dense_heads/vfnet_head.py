@@ -5,7 +5,7 @@ from mmcv.cnn import ConvModule, Scale
 from mmcv.ops import DeformConv2d
 from mmcv.runner import force_fp32
 
-from mmdet.core import (bbox2distance, bbox_overlaps, build_anchor_generator,
+from mmdet.core import (bbox2distance, bbox_overlaps, build_anchor_generator, build_prior_generator,
                         build_assigner, build_sampler, distance2bbox,
                         multi_apply, multiclass_nms, reduce_mean)
 from ..builder import HEADS, build_loss
@@ -146,7 +146,7 @@ class VFNetHead(ATSSHead, FCOSHead):
         # for getting ATSS targets
         self.use_atss = use_atss
         self.use_sigmoid_cls = loss_cls.get('use_sigmoid', False)
-        self.anchor_generator = build_anchor_generator(anchor_generator)
+        self.anchor_generator = build_prior_generator(anchor_generator)
         self.anchor_center_offset = anchor_generator['center_offset']
         self.num_anchors = self.anchor_generator.num_base_anchors[0]
         self.sampling = False

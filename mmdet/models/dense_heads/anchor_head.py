@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from mmcv.runner import force_fp32
 
-from mmdet.core import (anchor_inside_flags, build_anchor_generator,
+from mmdet.core import (anchor_inside_flags, build_anchor_generator, build_prior_generator,
                         build_assigner, build_bbox_coder, build_sampler,
                         images_to_levels, multi_apply, multiclass_nms, unmap)
 from ..builder import HEADS, build_loss
@@ -90,7 +90,7 @@ class AnchorHead(BaseDenseHead, BBoxTestMixin):
             self.sampler = build_sampler(sampler_cfg, context=self)
         self.fp16_enabled = False
 
-        self.anchor_generator = build_anchor_generator(anchor_generator)
+        self.anchor_generator = build_prior_generator(anchor_generator)
         # usually the numbers of anchors for each level are the same
         # except SSD detectors
         self.num_anchors = self.anchor_generator.num_base_anchors[0]

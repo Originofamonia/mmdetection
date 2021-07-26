@@ -4,7 +4,7 @@ import torch.nn as nn
 from mmcv.cnn import ConvModule
 from mmcv.runner import force_fp32
 
-from mmdet.core import (build_anchor_generator, build_assigner,
+from mmdet.core import (build_anchor_generator, build_assigner, build_prior_generator,
                         build_bbox_coder, build_sampler, images_to_levels,
                         multi_apply, multiclass_nms, unmap)
 from ..builder import HEADS, build_loss
@@ -105,9 +105,9 @@ class SABLRetinaHead(BaseDenseHead, BBoxTestMixin):
         assert (approx_anchor_generator['strides'] ==
                 square_anchor_generator['strides'])
 
-        self.approx_anchor_generator = build_anchor_generator(
+        self.approx_anchor_generator = build_prior_generator(
             approx_anchor_generator)
-        self.square_anchor_generator = build_anchor_generator(
+        self.square_anchor_generator = build_prior_generator(
             square_anchor_generator)
         self.approxs_per_octave = (
             self.approx_anchor_generator.num_base_anchors[0])

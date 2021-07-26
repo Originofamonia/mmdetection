@@ -9,7 +9,7 @@ from mmcv.cnn import (ConvModule, bias_init_with_prob, constant_init, is_norm,
                       normal_init)
 from mmcv.runner import force_fp32
 
-from mmdet.core import (build_anchor_generator, build_assigner,
+from mmdet.core import (build_anchor_generator, build_assigner, build_prior_generator,
                         build_bbox_coder, build_sampler, images_to_levels,
                         multi_apply, multiclass_nms)
 from ..builder import HEADS, build_loss
@@ -106,7 +106,7 @@ class YOLOV3Head(BaseDenseHead, BBoxTestMixin):
         self.act_cfg = act_cfg
 
         self.bbox_coder = build_bbox_coder(bbox_coder)
-        self.anchor_generator = build_anchor_generator(anchor_generator)
+        self.anchor_generator = build_prior_generator(anchor_generator)
 
         self.loss_cls = build_loss(loss_cls)
         self.loss_conf = build_loss(loss_conf)

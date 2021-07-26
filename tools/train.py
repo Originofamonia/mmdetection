@@ -69,10 +69,10 @@ def parse_args():
                         choices=['none', 'pytorch', 'slurm', 'mpi'],
                         default='pytorch',
                         help='job launcher')
-    parser.add_argument('--rank', type=int, default=0)
+    parser.add_argument('--local_rank', type=int, default=0)
     args = parser.parse_args()
-    if 'RANK' not in os.environ:
-        os.environ['RANK'] = str(args.rank)
+    if 'LOCAL_RANK' not in os.environ:
+        os.environ['LOCAL_RANK'] = str(args.local_rank)
 
     if args.options and args.cfg_options:
         raise ValueError(

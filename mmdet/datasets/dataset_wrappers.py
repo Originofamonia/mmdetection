@@ -8,6 +8,7 @@ from torch.utils.data.dataset import ConcatDataset as _ConcatDataset
 
 from .builder import DATASETS
 from .coco import CocoDataset
+from .chestxray14 import Chestxray14Dataset
 
 
 @DATASETS.register_module()

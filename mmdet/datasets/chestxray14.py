@@ -4,6 +4,7 @@ import os.path as osp
 import tempfile
 import warnings
 from collections import OrderedDict
+import json
 
 import mmcv
 import numpy as np
@@ -34,11 +35,12 @@ class Chestxray14Dataset(CustomDataset):
         Returns:
             list[dict]: Annotation info from COCO api.
         """
-
-        self.coco = COCO(ann_file)
+        f = open(ann_file)
+        self.json_data = json.load(f)
+        # self.coco = COCO(ann_file)
         # The order of returned `cat_ids` will not
         # change with the order of the CLASSES
-        self.cat_ids = self.coco.get_cat_ids(cat_names=self.CLASSES)
+        self.cat_ids = range(len(self.CLASSES))
 
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
         self.img_ids = self.coco.get_img_ids()

@@ -40,7 +40,7 @@ class Chestxray14Dataset(CustomDataset):
         # self.coco = COCO(ann_file)
         # The order of returned `cat_ids` will not
         # change with the order of the CLASSES
-        self.cat_ids = range(len(self.CLASSES))
+        self.cat_ids = list(range(1, len(self.CLASSES)+1))
 
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
         self.img_ids = self.coco.get_img_ids()

@@ -43,7 +43,7 @@ class Chestxray14Dataset(CustomDataset):
         self.cat_ids = list(range(1, len(self.CLASSES)+1))
 
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
-        self.img_ids = self.coco.get_img_ids()
+        self.img_ids = self.get_all_img_ids()
         data_infos = []
         total_ann_ids = []
         for i in self.img_ids:
@@ -188,6 +188,11 @@ class Chestxray14Dataset(CustomDataset):
             _bbox[2] - _bbox[0],
             _bbox[3] - _bbox[1],
         ]
+
+    def get_all_img_ids(self):
+        self.img_ids = []
+        for item in self.json_data:
+            self.img_ids.append(item['file_name'])
 
     def _proposal2json(self, results):
         """Convert proposal results to COCO json style."""

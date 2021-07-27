@@ -21,7 +21,7 @@ from mmdet.utils import collect_env, get_root_logger
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
     parser.add_argument('--config',
-                        default='/home/qiyuan/2021summer/mmdetection/configs/yolo/yolov3_d53_320_273e_coco.py',
+                        default='/home/qiyuan/2021summer/mmdetection/configs/cxr/chestxray14.py',
                         help='train config file path')
     parser.add_argument('--work-dir',
                         default='/home/qiyuan/2021summer/mmdetection/work',

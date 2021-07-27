@@ -26,23 +26,6 @@ class Chestxray14Dataset(CustomDataset):
         "Mass", "Hernia",
     )
 
-    def __init__(self,
-                 ann_file,
-                 pipeline,
-                 classes=None,
-                 data_root=None,
-                 img_prefix='',
-                 seg_prefix=None,
-                 proposal_file=None,
-                 test_mode=False,
-                 filter_empty_gt=True):
-        super().__init__(ann_file, pipeline, classes, data_root, img_prefix,
-                         seg_prefix, proposal_file, test_mode, filter_empty_gt)
-        f = open(ann_file)
-        self.json_data = json.load(f)
-        self.cat_ids = list(range(1, len(self.CLASSES)+1))
-        self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
-
     def load_annotations(self, ann_file):
         """Load annotation from COCO style annotation file.
 
@@ -52,10 +35,14 @@ class Chestxray14Dataset(CustomDataset):
         Returns:
             list[dict]: Annotation info from COCO api.
         """
+        f = open(ann_file)
+        self.json_data = json.load(f)
         # self.coco = COCO(ann_file)
         # The order of returned `cat_ids` will not
         # change with the order of the CLASSES
+        self.cat_ids = list(range(1, len(self.CLASSES)+1))
 
+        self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
         self.img_ids = self.coco.get_img_ids()
         data_infos = []
         total_ann_ids = []

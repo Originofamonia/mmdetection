@@ -71,9 +71,12 @@ class Chestxray14Dataset(CustomDataset):
         """
 
         img_id = self.data_infos[idx]['filename']
-        ann_ids = self.coco.get_ann_ids(img_ids=[img_id])
-        ann_info = self.coco.load_anns(ann_ids)
-        return self._parse_ann_info(self.data_infos[idx], ann_info)
+        for item in self.json_data:
+            if item['file_name'] == img_id:
+                return {'bboxes': item['boxes'],
+                        'labels': self.cat2index[item['syms']]}
+
+        # return self._parse_ann_info(self.data_infos[idx], ann_info)
 
     def get_cat_ids(self, idx):
         """Get COCO category ids by index.

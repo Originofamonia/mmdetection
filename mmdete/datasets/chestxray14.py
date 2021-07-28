@@ -89,7 +89,7 @@ class Chestxray14Dataset(CustomDataset):
             list[int]: All categories in the image of specified index.
         """
 
-        img_id = self.data_infos[idx]['id']
+        img_id = self.data_infos[idx]['filename']
         ann_ids = self.coco.get_ann_ids(img_ids=[img_id])
         ann_info = self.coco.load_anns(ann_ids)
         return [ann['category_id'] for ann in ann_info]
@@ -146,6 +146,8 @@ class Chestxray14Dataset(CustomDataset):
         # gt_bboxes_ignore = []
         gt_masks_ann = []
         for i, ann in enumerate(self.json_data):
+            if ann['filename'] != img_info['filename']:
+                continue
             if len(ann['boxes']) == 0:
                 continue
             x1, y1, x2, y2 = ann['boxes']

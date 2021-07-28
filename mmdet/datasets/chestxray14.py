@@ -6,7 +6,7 @@ import warnings
 from collections import OrderedDict
 import json
 from PIL import Image
-
+from collections import defaultdict
 
 import mmcv
 import numpy as np
@@ -42,9 +42,10 @@ class Chestxray14Dataset(CustomDataset):
         # self.coco = COCO(ann_file)
         # The order of returned `cat_ids` will not
         # change with the order of the CLASSES
-        self.cat_ids = list(range(1, len(self.CLASSES)+1))
+        # self.cat_ids = list(range(len(self.CLASSES)))
 
-        self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
+        self.cat2index = {cat: i for i, cat in enumerate(self.CLASSES)}
+        self.index2cat = {i: cat for cat, i in self.cat2label}
         self.get_all_img_ids()
         data_infos = []
         # total_ann_ids = []
@@ -94,13 +95,18 @@ class Chestxray14Dataset(CustomDataset):
         valid_inds = []
         # obtain images that contain bbox
         ids_with_ann = []
+        self.cat_img_map = defaultdict(list)
         for item in self.json_data:
             if len(item['syms']) > 0:
                 ids_with_ann.append(item['file_name'])
+            else:
+                pass
+                # self.cat_img_map[]
         ids_with_ann = set(ids_with_ann)
         # ids_with_ann = set(_['image_id'] for _ in self.coco.anns.values())
         # obtain images that contain annotations of the required categories
         ids_in_cat = set()
+
         for i, class_id in enumerate(self.cat_ids):
             ids_in_cat |= set(self.coco.cat_img_map[class_id])
         # merge the image id sets of the two conditions and use the merged set

@@ -21,7 +21,7 @@ from .custom import CustomDataset
 
 @DATASETS.register_module()
 class Chestxray14Dataset(CustomDataset):
-    CLASSES = (  # 16 classes (14 diseases and "no findings")
+    CLASSES = (  # 17 classes (16 diseases and "no findings")
         "No findings", "Atelectasis", "Consolidation", "Infiltration",
         "Pneumothorax", "Edema", "Emphysema", "Fibrosis", "Effusion",
         "Pneumonia", "Pleural_thickening", "Cardiomegaly", "Nodule",
@@ -108,8 +108,8 @@ class Chestxray14Dataset(CustomDataset):
         # obtain images that contain annotations of the required categories
         ids_in_cat = set()
 
-        for i, class_id in enumerate(self.cat_ids):
-            ids_in_cat |= set(self.coco.cat_img_map[class_id])
+        for i, cat in enumerate(self.index2cat):
+            ids_in_cat |= set(self.cat_img_map[i])
         # merge the image id sets of the two conditions and use the merged set
         # to filter out images if self.filter_empty_gt=True
         ids_in_cat &= ids_with_ann

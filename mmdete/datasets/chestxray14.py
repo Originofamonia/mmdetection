@@ -146,24 +146,27 @@ class Chestxray14Dataset(CustomDataset):
         # gt_bboxes_ignore = []
         gt_masks_ann = []
         for i, ann in enumerate(self.json_data):
-            # if ann.get('ignore', False):
-            #     continue
-            x1, y1, w, h = ann['bbox']
-            inter_w = max(0, min(x1 + w, img_info['width']) - max(x1, 0))
-            inter_h = max(0, min(y1 + h, img_info['height']) - max(y1, 0))
+            if len(ann['boxes']) == 0:
+                continue
+            x1, y1, x2, y2 = ann['boxes']
+            w = x2 - x1
+            h = y2 - y1
+            # x1, y1, w, h = ann['boxes']
+            inter_w = max(0, min(x2, img_info['width']) - max(x1, 0))
+            inter_h = max(0, min(y2, img_info['height']) - max(y1, 0))
             if inter_w * inter_h == 0:
                 continue
-            if ann['area'] <= 0 or w < 1 or h < 1:
+            if w * h <= 0 or w < 1 or h < 1:
                 continue
-            if ann['category_id'] not in self.cat_ids:
-                continue
-            bbox = [x1, y1, x1 + w, y1 + h]
+            # if ann['syms'] not in self.cat_ids:
+            #     continue
+            bbox = [x1, y1, x2, y2]
             # if ann.get('iscrowd', False):
             #     gt_bboxes_ignore.append(bbox)
             # else:
             gt_bboxes.append(bbox)
-            gt_labels.append(self.cat2label[ann['category_id']])
-            gt_masks_ann.append(ann.get('segmentation', None))
+            gt_labels.append(self.cat2index[ann['syms']])
+            # gt_masks_ann.append(ann.get('segmentation', None))
 
         if gt_bboxes:
             gt_bboxes = np.array(gt_bboxes, dtype=np.float32)

@@ -312,7 +312,10 @@ class Collect:
         data = {}
         img_meta = {}
         for key in self.meta_keys:
-            img_meta[key] = results[key]
+            if key in results.keys():
+                img_meta[key] = results[key]
+            else:
+                img_meta[key] = False
         data['img_metas'] = DC(img_meta, cpu_only=True)
         for key in self.keys:
             data[key] = results[key]

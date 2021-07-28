@@ -73,8 +73,9 @@ class Chestxray14Dataset(CustomDataset):
         img_id = self.data_infos[idx]['filename']
         for item in self.json_data:
             if item['file_name'] == img_id:
-                return {'bboxes': np.asarray(item['boxes']),
-                        'labels': [self.cat2index[sym] for sym in item['syms']]}
+                # return {'bboxes': np.asarray(item['boxes']),
+                #         'labels': [self.cat2index[sym] for sym in item['syms']]}
+                return self._parse_ann_info(self.data_infos[idx])
 
         # return self._parse_ann_info(self.data_infos[idx], ann_info)
 
@@ -128,11 +129,11 @@ class Chestxray14Dataset(CustomDataset):
         self.img_ids = valid_img_ids
         return valid_inds
 
-    def _parse_ann_info(self, img_info, ann_info):
+    def _parse_ann_info(self, img_info):
         """Parse bbox and mask annotation.
 
         Args:
-            ann_info (list[dict]): Annotation info of an image.
+            # ann_info (list[dict]): Annotation info of an image.
             with_mask (bool): Whether to parse mask annotations.
 
         Returns:
@@ -142,11 +143,11 @@ class Chestxray14Dataset(CustomDataset):
         """
         gt_bboxes = []
         gt_labels = []
-        gt_bboxes_ignore = []
+        # gt_bboxes_ignore = []
         gt_masks_ann = []
-        for i, ann in enumerate(ann_info):
-            if ann.get('ignore', False):
-                continue
+        for i, ann in enumerate(self.json_data):
+            # if ann.get('ignore', False):
+            #     continue
             x1, y1, w, h = ann['bbox']
             inter_w = max(0, min(x1 + w, img_info['width']) - max(x1, 0))
             inter_h = max(0, min(y1 + h, img_info['height']) - max(y1, 0))
@@ -157,12 +158,12 @@ class Chestxray14Dataset(CustomDataset):
             if ann['category_id'] not in self.cat_ids:
                 continue
             bbox = [x1, y1, x1 + w, y1 + h]
-            if ann.get('iscrowd', False):
-                gt_bboxes_ignore.append(bbox)
-            else:
-                gt_bboxes.append(bbox)
-                gt_labels.append(self.cat2label[ann['category_id']])
-                gt_masks_ann.append(ann.get('segmentation', None))
+            # if ann.get('iscrowd', False):
+            #     gt_bboxes_ignore.append(bbox)
+            # else:
+            gt_bboxes.append(bbox)
+            gt_labels.append(self.cat2label[ann['category_id']])
+            gt_masks_ann.append(ann.get('segmentation', None))
 
         if gt_bboxes:
             gt_bboxes = np.array(gt_bboxes, dtype=np.float32)
@@ -171,19 +172,19 @@ class Chestxray14Dataset(CustomDataset):
             gt_bboxes = np.zeros((0, 4), dtype=np.float32)
             gt_labels = np.array([], dtype=np.int64)
 
-        if gt_bboxes_ignore:
-            gt_bboxes_ignore = np.array(gt_bboxes_ignore, dtype=np.float32)
-        else:
-            gt_bboxes_ignore = np.zeros((0, 4), dtype=np.float32)
+        # if gt_bboxes_ignore:
+        #     gt_bboxes_ignore = np.array(gt_bboxes_ignore, dtype=np.float32)
+        # else:
+        gt_bboxes_ignore = np.zeros((0, 4), dtype=np.float32)
 
-        seg_map = img_info['filename'].replace('jpg', 'png')
+        # seg_map = img_info['filename'].replace('jpg', 'png')
 
         ann = dict(
             bboxes=gt_bboxes,
             labels=gt_labels,
             bboxes_ignore=gt_bboxes_ignore,
             masks=gt_masks_ann,
-            seg_map=seg_map)
+            seg_map=None)
 
         return ann
 

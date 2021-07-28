@@ -92,10 +92,13 @@ class Chestxray14Dataset(CustomDataset):
     def _filter_imgs(self, min_size=32):
         """Filter images too small or without ground truths."""
         valid_inds = []
-        # obtain images that contain annotation
+        # obtain images that contain bbox
+        ids_with_ann = []
         for item in self.json_data:
-            print(item)
-        ids_with_ann = set(_['image_id'] for _ in self.coco.anns.values())
+            if len(item['syms']) > 0:
+                ids_with_ann.append(item['file_name'])
+        ids_with_ann = set(ids_with_ann)
+        # ids_with_ann = set(_['image_id'] for _ in self.coco.anns.values())
         # obtain images that contain annotations of the required categories
         ids_in_cat = set()
         for i, class_id in enumerate(self.cat_ids):

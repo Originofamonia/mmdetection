@@ -1208,6 +1208,8 @@ class MinIoURandomCrop:
                         # labels
                         label_key = self.bbox2label.get(key)
                         if label_key in results:
+                            print(label_key)
+                            print(mask)
                             results[label_key] = results[label_key][mask]
 
                         # mask fields

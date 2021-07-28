@@ -45,7 +45,7 @@ class Chestxray14Dataset(CustomDataset):
         # self.cat_ids = list(range(len(self.CLASSES)))
 
         self.cat2index = {cat: i for i, cat in enumerate(self.CLASSES)}
-        self.index2cat = {i: cat for cat, i in self.cat2label}
+        self.index2cat = {i: cat for cat, i in self.cat2index}
         self.get_all_img_ids()
         data_infos = []
         # total_ann_ids = []

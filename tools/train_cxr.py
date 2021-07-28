@@ -4,12 +4,22 @@ import os
 import os.path as osp
 import time
 import warnings
+import sys
 
 import mmcv
 import torch
 from mmcv import Config, DictAction
 from mmcv.runner import get_dist_info, init_dist
 from mmcv.utils import get_git_hash
+
+def add_path(path):
+    if path not in sys.path:
+        print('Adding {}'.format(path))
+        sys.path.append(path)
+
+abs_current_path = os.path.realpath('./')
+root_path = os.path.join('/', *abs_current_path.split(os.path.sep)[:-1])
+add_path(root_path)
 
 from mmdete import __version__
 from mmdete.apis import set_random_seed, train_detector

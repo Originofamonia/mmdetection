@@ -73,7 +73,7 @@ class Chestxray14Dataset(CustomDataset):
         img_id = self.data_infos[idx]['filename']
         for item in self.json_data:
             if item['file_name'] == img_id:
-                return {'bboxes': item['boxes'],
+                return {'bboxes': np.asarray(item['boxes']),
                         'labels': [self.cat2index[sym] for sym in item['syms']]}
 
         # return self._parse_ann_info(self.data_infos[idx], ann_info)

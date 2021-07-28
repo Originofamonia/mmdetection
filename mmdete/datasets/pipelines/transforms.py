@@ -1120,7 +1120,7 @@ class MinIoURandomCrop:
                  bbox_clip_border=True):
         # 1: return ori img
         self.min_ious = min_ious
-        self.sample_mode = (1, *min_ious, 0)
+        self.sample_mode = (1, 1)  # (1, *min_ious, 0)
         self.min_crop_size = min_crop_size
         self.bbox_clip_border = bbox_clip_border
         self.bbox2label = {

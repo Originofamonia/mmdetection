@@ -70,7 +70,7 @@ class Chestxray14Dataset(CustomDataset):
             dict: Annotation info of specified index.
         """
 
-        img_id = self.data_infos[idx]['id']
+        img_id = self.data_infos[idx]['filename']
         ann_ids = self.coco.get_ann_ids(img_ids=[img_id])
         ann_info = self.coco.load_anns(ann_ids)
         return self._parse_ann_info(self.data_infos[idx], ann_info)

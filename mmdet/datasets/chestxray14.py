@@ -28,7 +28,7 @@ class Chestxray14Dataset(CustomDataset):
         "Mass", "Hernia",
     )
 
-    def load_annotations(self, ann_file):
+    def load_annotations(self, ann_file):  # done
         """Load annotation from COCO style annotation file.
 
         Args:
@@ -45,7 +45,7 @@ class Chestxray14Dataset(CustomDataset):
         self.cat_ids = list(range(1, len(self.CLASSES)+1))
 
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
-        self.get_all_img_ids()  # done
+        self.get_all_img_ids()
         data_infos = []
         # total_ann_ids = []
         for i in self.img_ids:
@@ -93,6 +93,8 @@ class Chestxray14Dataset(CustomDataset):
         """Filter images too small or without ground truths."""
         valid_inds = []
         # obtain images that contain annotation
+        for item in self.json_data:
+            print(item)
         ids_with_ann = set(_['image_id'] for _ in self.coco.anns.values())
         # obtain images that contain annotations of the required categories
         ids_in_cat = set()

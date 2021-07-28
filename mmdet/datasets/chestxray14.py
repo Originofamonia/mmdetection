@@ -109,7 +109,7 @@ class Chestxray14Dataset(CustomDataset):
         ids_in_cat = set()
 
         for i, cat in enumerate(self.index2cat):
-            ids_in_cat |= set(self.cat_img_map[i])
+            ids_in_cat |= set(self.cat_img_map[cat])
         # merge the image id sets of the two conditions and use the merged set
         # to filter out images if self.filter_empty_gt=True
         ids_in_cat &= ids_with_ann

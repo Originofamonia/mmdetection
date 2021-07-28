@@ -95,13 +95,14 @@ class Chestxray14Dataset(CustomDataset):
         valid_inds = []
         # obtain images that contain bbox
         ids_with_ann = []
-        self.cat_img_map = defaultdict(list)
+        self.cat_img_map = defaultdict(list)  # cat_id to img_filename
         for item in self.json_data:
             if len(item['syms']) > 0:
                 ids_with_ann.append(item['file_name'])
+                for sym in item['syms']:
+                    self.cat_img_map[self.cat2index[sym]].append(item['file_name'])
             else:
-                pass
-                # self.cat_img_map[]
+                self.cat_img_map[self.cat2index['No findings']].append(item['file_name'])
         ids_with_ann = set(ids_with_ann)
         # ids_with_ann = set(_['image_id'] for _ in self.coco.anns.values())
         # obtain images that contain annotations of the required categories

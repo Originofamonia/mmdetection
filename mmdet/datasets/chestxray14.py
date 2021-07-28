@@ -5,6 +5,8 @@ import tempfile
 import warnings
 from collections import OrderedDict
 import json
+from PIL import Image
+
 
 import mmcv
 import numpy as np
@@ -43,10 +45,11 @@ class Chestxray14Dataset(CustomDataset):
         self.cat_ids = list(range(1, len(self.CLASSES)+1))
 
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
-        self.get_all_img_ids()
+        self.get_all_img_ids()  # done
         data_infos = []
         total_ann_ids = []
         for i in self.img_ids:
+            img = Image.open(osp.join(self.img_prefix, i))
             info = self.coco.load_imgs([i])[0]
             info['filename'] = info['file_name']
             data_infos.append(info)

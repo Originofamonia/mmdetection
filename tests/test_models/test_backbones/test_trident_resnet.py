@@ -1,8 +1,8 @@
 import pytest
 import torch
 
-from mmdet.models.backbones import TridentResNet
-from mmdet.models.backbones.trident_resnet import TridentBottleneck
+from mmdete.models.backbones import TridentResNet
+from mmdete.models.backbones.trident_resnet import TridentBottleneck
 
 
 def test_trident_resnet_bottleneck():

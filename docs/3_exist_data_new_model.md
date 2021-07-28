@@ -91,7 +91,7 @@ or alternatively add
 
 ```python
 custom_imports = dict(
-    imports=['mmdet.models.necks.augfpn.py'],
+    imports=['mmdete.models.necks.augfpn.py'],
     allow_failed_imports=False)
 ```
 

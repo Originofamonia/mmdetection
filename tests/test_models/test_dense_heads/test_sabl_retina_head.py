@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import SABLRetinaHead
+from mmdete.models.dense_heads import SABLRetinaHead
 
 
 def test_sabl_retina_head_loss():

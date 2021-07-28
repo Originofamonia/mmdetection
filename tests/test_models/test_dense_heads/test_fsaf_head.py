@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import FSAFHead
+from mmdete.models.dense_heads import FSAFHead
 
 
 def test_fsaf_head_loss():

@@ -51,7 +51,7 @@ from .my_optimizer import MyOptimizer
 - Use `custom_imports` in the config to manually import it
 
 ```python
-custom_imports = dict(imports=['mmdet.core.optimizer.my_optimizer'], allow_failed_imports=False)
+custom_imports = dict(imports=['mmdete.core.optimizer.my_optimizer'], allow_failed_imports=False)
 ```
 
 The module `mmdet.core.optimizer.my_optimizer` will be imported at the beginning of the program and the class `MyOptimizer` is then automatically registered.
@@ -84,7 +84,7 @@ The users can do those fine-grained parameter tuning through customizing optimiz
 from mmcv.utils import build_from_cfg
 
 from mmcv.runner.optimizer import OPTIMIZER_BUILDERS, OPTIMIZERS
-from mmdet.utils import get_root_logger
+from mmdete.utils import get_root_logger
 from .my_optimizer import MyOptimizer
 
 
@@ -239,7 +239,7 @@ from .my_hook import MyHook
 - Use `custom_imports` in the config to manually import it
 
 ```python
-custom_imports = dict(imports=['mmdet.core.utils.my_hook'], allow_failed_imports=False)
+custom_imports = dict(imports=['mmdete.core.utils.my_hook'], allow_failed_imports=False)
 ```
 
 #### 3. Modify the config

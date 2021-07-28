@@ -2,8 +2,8 @@ import mmcv
 import numpy as np
 import torch
 
-from mmdet.models.dense_heads import PAAHead, paa_head
-from mmdet.models.dense_heads.paa_head import levels_to_images
+from mmdete.models.dense_heads import PAAHead, paa_head
+from mmdete.models.dense_heads.paa_head import levels_to_images
 
 
 def test_paa_head_loss():

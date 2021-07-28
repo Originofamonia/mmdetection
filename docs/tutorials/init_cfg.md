@@ -41,7 +41,7 @@ class FooModel(BaseModule)
 	```python
 	import torch.nn as nn
 	from mmcv.runner import BaseModule
-	# or directly inherit mmdet models
+	# or directly inherit mmdete models
 
 	class FooModel(BaseModule)
 		def __init__(self,

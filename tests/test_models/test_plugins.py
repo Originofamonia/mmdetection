@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from mmdet.models.plugins import DropBlock
+from mmdete.models.plugins import DropBlock
 
 
 def test_dropblock():

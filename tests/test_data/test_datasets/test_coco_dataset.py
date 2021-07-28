@@ -4,7 +4,7 @@ import tempfile
 import mmcv
 import pytest
 
-from mmdet.datasets import CocoDataset
+from mmdete.datasets import CocoDataset
 
 
 def _create_ids_error_coco_json(json_name):

@@ -5,8 +5,8 @@ import numpy as np
 from mmcv.utils import build_from_cfg
 from numpy.testing import assert_array_equal
 
-from mmdet.core.mask import BitmapMasks, PolygonMasks
-from mmdet.datasets.builder import PIPELINES
+from mmdete.core.mask import BitmapMasks, PolygonMasks
+from mmdete.datasets.builder import PIPELINES
 
 
 def construct_toy_data(poly2mask=True):

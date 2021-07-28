@@ -1,8 +1,8 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import PISARetinaHead, PISASSDHead
-from mmdet.models.roi_heads import PISARoIHead
+from mmdete.models.dense_heads import PISARetinaHead, PISASSDHead
+from mmdete.models.roi_heads import PISARoIHead
 
 
 def test_pisa_retinanet_head_loss():

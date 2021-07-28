@@ -4,8 +4,8 @@ import mmcv
 import pytest
 import torch
 
-from mmdet import digit_version
-from mmdet.models.necks import FPN, YOLOV3Neck
+from mmdete import digit_version
+from mmdete.models.necks import FPN, YOLOV3Neck
 from .utils import ort_validate
 
 if digit_version(torch.__version__) <= digit_version('1.5.0'):

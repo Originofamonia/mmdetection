@@ -8,8 +8,8 @@ import onnx
 import torch
 from mmcv import Config, DictAction
 
-from mmdet.core.export import build_model_from_cfg, preprocess_example_input
-from mmdet.core.export.model_wrappers import ONNXRuntimeDetector
+from mmdete.core.export import build_model_from_cfg, preprocess_example_input
+from mmdete.core.export.model_wrappers import ONNXRuntimeDetector
 
 
 def pytorch2onnx(model,
@@ -91,7 +91,7 @@ def pytorch2onnx(model,
     if do_simplify:
         import onnxsim
 
-        from mmdet import digit_version
+        from mmdete import digit_version
 
         min_required_version = '0.3.0'
         assert digit_version(onnxsim.__version__) >= digit_version(

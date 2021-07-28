@@ -3,7 +3,7 @@ import tempfile
 
 import mmcv
 
-from mmdet.datasets import CocoPanopticDataset
+from mmdete.datasets import CocoPanopticDataset
 
 
 def _create_panoptic_style_json(json_name):

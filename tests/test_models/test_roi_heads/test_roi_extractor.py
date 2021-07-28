@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from mmdet.models.roi_heads.roi_extractors import GenericRoIExtractor
+from mmdete.models.roi_heads.roi_extractors import GenericRoIExtractor
 
 
 def test_groie():

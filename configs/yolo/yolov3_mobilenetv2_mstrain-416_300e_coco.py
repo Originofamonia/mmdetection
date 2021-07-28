@@ -7,7 +7,7 @@ model = dict(
         out_indices=(2, 4, 6),
         act_cfg=dict(type='LeakyReLU', negative_slope=0.1),
         init_cfg=dict(
-            type='Pretrained', checkpoint='open-mmlab://mmdet/mobilenet_v2')),
+            type='Pretrained', checkpoint='open-mmlab://mmdete/mobilenet_v2')),
     neck=dict(
         type='YOLOV3Neck',
         num_scales=3,

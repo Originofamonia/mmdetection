@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from mmdet.models import Accuracy, build_loss
+from mmdete.models import Accuracy, build_loss
 
 
 def test_ce_loss():

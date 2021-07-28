@@ -52,7 +52,7 @@ def convert_reslayer(model_key, model_weight, state_dict, converted_names):
 
 
 def convert(src, dst):
-    """Convert keys in pycls pretrained RegNet models to mmdet style."""
+    """Convert keys in pycls pretrained RegNet models to mmdete style."""
     # load caffe model
     regnet_model = torch.load(src)
     blobs = regnet_model['model_state']

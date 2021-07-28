@@ -2,8 +2,8 @@ import pytest
 import torch
 from torch.nn.modules.batchnorm import _BatchNorm
 
-from mmdet.models.necks import (FPN, ChannelMapper, CTResNetNeck,
-                                DilatedEncoder, SSDNeck, YOLOV3Neck)
+from mmdete.models.necks import (FPN, ChannelMapper, CTResNetNeck,
+                                 DilatedEncoder, SSDNeck, YOLOV3Neck)
 
 
 def test_fpn():

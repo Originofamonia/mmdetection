@@ -149,7 +149,7 @@ For each operation, we list the related dict fields that are added/updated/remov
 1. Write a new pipeline in any file, e.g., `my_pipeline.py`. It takes a dict as input and return a dict.
 
     ```python
-    from mmdet.datasets import PIPELINES
+    from mmdete.datasets import PIPELINES
 
     @PIPELINES.register_module()
     class MyTransform:

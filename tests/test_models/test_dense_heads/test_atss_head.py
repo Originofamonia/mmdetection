@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import ATSSHead
+from mmdete.models.dense_heads import ATSSHead
 
 
 def test_atss_head_loss():

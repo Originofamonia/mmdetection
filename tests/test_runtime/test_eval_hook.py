@@ -11,7 +11,7 @@ from mmcv.runner import EpochBasedRunner, build_optimizer
 from mmcv.utils import get_logger
 from torch.utils.data import DataLoader, Dataset
 
-from mmdet.core import DistEvalHook, EvalHook
+from mmdete.core import DistEvalHook, EvalHook
 
 
 class ExampleDataset(Dataset):
@@ -64,8 +64,8 @@ class ExampleModel(nn.Module):
 
 @pytest.mark.skipif(
     not torch.cuda.is_available(), reason='requires CUDA support')
-@patch('mmdet.apis.single_gpu_test', MagicMock)
-@patch('mmdet.apis.multi_gpu_test', MagicMock)
+@patch('mmdete.apis.single_gpu_test', MagicMock)
+@patch('mmdete.apis.multi_gpu_test', MagicMock)
 @pytest.mark.parametrize('EvalHookCls', (EvalHook, DistEvalHook))
 def test_eval_hook(EvalHookCls):
     with pytest.raises(TypeError):

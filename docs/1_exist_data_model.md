@@ -17,7 +17,7 @@ To start with, we recommend [Faster RCNN](https://github.com/open-mmlab/mmdetect
 MMDetection provide high-level Python APIs for inference on images. Here is an example of building the model and inference on given images or videos.
 
 ```python
-from mmdet.apis import init_detector, inference_detector
+from mmdete.apis import init_detector, inference_detector
 import mmcv
 
 # Specify the path to model config and checkpoint file
@@ -56,8 +56,8 @@ See `tests/async_benchmark.py` to compare the speed of synchronous and asynchron
 ```python
 import asyncio
 import torch
-from mmdet.apis import init_detector, async_inference_detector
-from mmdet.utils.contextmanagers import concurrent
+from mmdete.apis import init_detector, async_inference_detector
+from mmdete.utils.contextmanagers import concurrent
 
 async def main():
     config_file = 'configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py'

@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import torch
 
-from mmdet.core import BitmapMasks, PolygonMasks
+from mmdete.core import BitmapMasks, PolygonMasks
 
 
 def dummy_raw_bitmap_masks(size):

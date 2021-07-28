@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'MMDetection'
 copyright = '2018-2021, OpenMMLab'
 author = 'MMDetection Authors'
-version_file = '../mmdet/version.py'
+version_file = '../mmdete/version.py'
 
 
 def get_version():
@@ -47,7 +47,7 @@ extensions = [
 ]
 
 autodoc_mock_imports = [
-    'matplotlib', 'pycocotools', 'terminaltables', 'mmdet.version', 'mmcv.ops'
+    'matplotlib', 'pycocotools', 'terminaltables', 'mmdete.version', 'mmcv.ops'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

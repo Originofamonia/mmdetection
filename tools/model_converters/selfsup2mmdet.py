@@ -5,7 +5,7 @@ import torch
 
 
 def moco_convert(src, dst):
-    """Convert keys in pycls pretrained moco models to mmdet style."""
+    """Convert keys in pycls pretrained moco models to mmdete style."""
     # load caffe model
     moco_model = torch.load(src)
     blobs = moco_model['state_dict']

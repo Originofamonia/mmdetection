@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from mmdet.models.utils import SELayer
+from mmdete.models.utils import SELayer
 
 
 def test_se_layer():

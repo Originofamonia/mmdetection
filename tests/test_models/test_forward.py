@@ -14,8 +14,8 @@ def _get_config_directory():
         repo_dpath = dirname(dirname(dirname(__file__)))
     except NameError:
         # For IPython development when this __file__ is not defined
-        import mmdet
-        repo_dpath = dirname(dirname(mmdet.__file__))
+        import mmdete
+        repo_dpath = dirname(dirname(mmdete.__file__))
     config_dpath = join(repo_dpath, 'configs')
     if not exists(config_dpath):
         raise Exception('Cannot find config path')
@@ -46,7 +46,7 @@ def test_sparse_rcnn_forward():
     config_path = 'sparse_rcnn/sparse_rcnn_r50_fpn_1x_coco.py'
     model = _get_detector_cfg(config_path)
     model.backbone.init_cfg = None
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
     detector.init_weights()
     input_shape = (1, 3, 550, 550)
@@ -111,7 +111,7 @@ def test_rpn_forward():
     model = _get_detector_cfg('rpn/rpn_r50_fpn_1x_coco.py')
     model.backbone.init_cfg = None
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (1, 3, 224, 224)
@@ -157,7 +157,7 @@ def test_single_stage_forward_gpu(cfg_file):
     model = _get_detector_cfg(cfg_file)
     model.backbone.init_cfg = None
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (2, 3, 224, 224)
@@ -194,7 +194,7 @@ def test_faster_rcnn_ohem_forward():
         'faster_rcnn/faster_rcnn_r50_fpn_ohem_1x_coco.py')
     model.backbone.init_cfg = None
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (1, 3, 256, 256)
@@ -266,7 +266,7 @@ def test_two_stage_forward(cfg_file):
         model.test_cfg.rcnn.score_thr = 0.05
         model.test_cfg.rcnn.max_per_img = 100
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (1, 3, 256, 256)
@@ -336,7 +336,7 @@ def test_single_stage_forward_cpu(cfg_file):
     model = _get_detector_cfg(cfg_file)
     model.backbone.init_cfg = None
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (1, 3, 300, 300)
@@ -381,7 +381,7 @@ def _demo_mm_inputs(input_shape=(1, 3, 300, 300),
         num_classes (int):
             number of different labels a box might have
     """
-    from mmdet.core import BitmapMasks
+    from mmdete.core import BitmapMasks
 
     (N, C, H, W) = input_shape
 
@@ -448,7 +448,7 @@ def test_yolact_forward():
     model = _get_detector_cfg('yolact/yolact_r50_1x8_coco.py')
     model.backbone.init_cfg = None
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (1, 3, 100, 100)
@@ -487,7 +487,7 @@ def test_detr_forward():
     model = _get_detector_cfg('detr/detr_r50_8x2_150e_coco.py')
     model.backbone.init_cfg = None
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (1, 3, 100, 100)
@@ -542,7 +542,7 @@ def test_kd_single_stage_forward():
     model = _get_detector_cfg('ld/ld_r18_gflv1_r101_fpn_coco_1x.py')
     model.backbone.init_cfg = None
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(model)
 
     input_shape = (1, 3, 100, 100)
@@ -594,8 +594,8 @@ def test_kd_single_stage_forward():
 
 
 def test_inference_detector():
-    from mmdet.apis import inference_detector
-    from mmdet.models import build_detector
+    from mmdete.apis import inference_detector
+    from mmdete.models import build_detector
     from mmcv import ConfigDict
 
     # small RetinaNet

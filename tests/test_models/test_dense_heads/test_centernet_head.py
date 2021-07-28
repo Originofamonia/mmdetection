@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from mmcv import ConfigDict
 
-from mmdet.models.dense_heads import CenterNetHead
+from mmdete.models.dense_heads import CenterNetHead
 
 
 def test_center_head_loss():

@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import GFLHead, LDHead
+from mmdete.models.dense_heads import GFLHead, LDHead
 
 
 def test_ld_head_loss():

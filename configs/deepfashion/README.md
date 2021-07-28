@@ -11,7 +11,7 @@ The file tree should be like this:
 
 ```sh
 mmdetection
-├── mmdet
+├── mmdete
 ├── tools
 ├── configs
 ├── data

@@ -1,6 +1,6 @@
 import pytest
 
-from mmdet.datasets import get_loading_pipeline, replace_ImageToTensor
+from mmdete.datasets import get_loading_pipeline, replace_ImageToTensor
 
 
 def test_replace_ImageToTensor():

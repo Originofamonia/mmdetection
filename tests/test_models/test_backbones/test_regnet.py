@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from mmdet.models.backbones import RegNet
+from mmdete.models.backbones import RegNet
 
 regnet_test_data = [
     ('regnetx_400mf',

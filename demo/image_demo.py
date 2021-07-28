@@ -1,8 +1,8 @@
 import asyncio
 from argparse import ArgumentParser
 
-from mmdet.apis import (async_inference_detector, inference_detector,
-                        init_detector, show_result_pyplot)
+from mmdete.apis import (async_inference_detector, inference_detector,
+                         init_detector, show_result_pyplot)
 
 
 def parse_args():

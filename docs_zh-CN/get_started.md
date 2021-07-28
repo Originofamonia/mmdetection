@@ -122,7 +122,7 @@ MIM 能够自动地安装 OpenMMLab 的项目以及对应的依赖包。
     或者，可以使用更简单的命令安装 MMDetection：
 
     ```shell
-    pip install mmdet
+    pip install mmdete
     ```
 
 **注意：**
@@ -213,7 +213,7 @@ PYTHONPATH="$(dirname $0)/..":$PYTHONPATH
 为了验证是否正确安装了 MMDetection 和所需的环境，我们可以运行示例的 Python 代码来初始化检测器并推理一个演示图像：
 
 ```python
-from mmdet.apis import init_detector, inference_detector
+from mmdete.apis import init_detector, inference_detector
 
 config_file = 'configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py'
 # 从 model zoo 下载 checkpoint 并放在 `checkpoints/` 文件下

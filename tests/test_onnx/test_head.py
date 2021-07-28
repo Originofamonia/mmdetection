@@ -7,10 +7,10 @@ import pytest
 import torch
 from mmcv.cnn import Scale
 
-from mmdet import digit_version
-from mmdet.models import build_detector
-from mmdet.models.dense_heads import (FCOSHead, FSAFHead, RetinaHead, SSDHead,
-                                      YOLOV3Head)
+from mmdete import digit_version
+from mmdete.models import build_detector
+from mmdete.models.dense_heads import (FCOSHead, FSAFHead, RetinaHead, SSDHead,
+                                       YOLOV3Head)
 from .utils import ort_validate
 
 data_path = osp.join(osp.dirname(__file__), 'data')

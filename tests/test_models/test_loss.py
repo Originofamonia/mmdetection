@@ -1,15 +1,15 @@
 import pytest
 import torch
 
-from mmdet.models.losses import (BalancedL1Loss, CrossEntropyLoss,
-                                 DistributionFocalLoss, FocalLoss,
-                                 GaussianFocalLoss,
-                                 KnowledgeDistillationKLDivLoss, L1Loss,
-                                 MSELoss, QualityFocalLoss, SeesawLoss,
-                                 SmoothL1Loss, VarifocalLoss)
-from mmdet.models.losses.ghm_loss import GHMC, GHMR
-from mmdet.models.losses.iou_loss import (BoundedIoULoss, CIoULoss, DIoULoss,
-                                          GIoULoss, IoULoss)
+from mmdete.models.losses import (BalancedL1Loss, CrossEntropyLoss,
+                                  DistributionFocalLoss, FocalLoss,
+                                  GaussianFocalLoss,
+                                  KnowledgeDistillationKLDivLoss, L1Loss,
+                                  MSELoss, QualityFocalLoss, SeesawLoss,
+                                  SmoothL1Loss, VarifocalLoss)
+from mmdete.models.losses.ghm_loss import GHMC, GHMR
+from mmdete.models.losses.iou_loss import (BoundedIoULoss, CIoULoss, DIoULoss,
+                                           GIoULoss, IoULoss)
 
 
 @pytest.mark.parametrize(

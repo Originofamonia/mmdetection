@@ -1,9 +1,9 @@
 import pytest
 from mmcv.utils import ConfigDict
 
-from mmdet.models.utils.transformer import (DetrTransformerDecoder,
-                                            DetrTransformerEncoder,
-                                            Transformer)
+from mmdete.models.utils.transformer import (DetrTransformerDecoder,
+                                             DetrTransformerEncoder,
+                                             Transformer)
 
 
 def test_detr_transformer_dencoder_encoder_layer():

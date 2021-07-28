@@ -46,7 +46,7 @@ or alternatively add
 
 ```python
 custom_imports = dict(
-    imports=['mmdet.models.backbones.mobilenet'],
+    imports=['mmdete.models.backbones.mobilenet'],
     allow_failed_imports=False)
 ```
 
@@ -102,7 +102,7 @@ or alternatively add
 
 ```python
 custom_imports = dict(
-    imports=['mmdet.models.necks.pafpn.py'],
+    imports=['mmdete.models.necks.pafpn.py'],
     allow_failed_imports=False)
 ```
 
@@ -127,7 +127,7 @@ Double Head R-CNN implements a new bbox head for object detection.
 To implement a bbox head, basically we need to implement three functions of the new module as the following.
 
 ```python
-from mmdet.models.builder import HEADS
+from mmdete.models.builder import HEADS
 from .bbox_head import BBoxHead
 
 @HEADS.register_module()
@@ -164,7 +164,7 @@ Second, implement a new RoI Head if it is necessary. We plan to inherit the new 
 ```python
 import torch
 
-from mmdet.core import bbox2result, bbox2roi, build_assigner, build_sampler
+from mmdete.core import bbox2result, bbox2roi, build_assigner, build_sampler
 from ..builder import HEADS, build_head, build_roi_extractor
 from .base_roi_head import BaseRoIHead
 from .test_mixins import BBoxTestMixin, MaskTestMixin
@@ -260,7 +260,7 @@ Alternatively, the users can add
 
 ```python
 custom_imports=dict(
-    imports=['mmdet.models.roi_heads.double_roi_head', 'mmdet.models.bbox_heads.double_bbox_head'])
+    imports=['mmdete.models.roi_heads.double_roi_head', 'mmdete.models.bbox_heads.double_bbox_head'])
 ```
 
 to the config file and achieve the same goal.
@@ -350,7 +350,7 @@ Alternatively, you can add
 
 ```python
 custom_imports=dict(
-    imports=['mmdet.models.losses.my_loss'])
+    imports=['mmdete.models.losses.my_loss'])
 ```
 
 to the config file and achieve the same goal.

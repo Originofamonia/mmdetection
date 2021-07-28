@@ -1,6 +1,6 @@
 import pytest
 
-from mmdet.models.backbones import DetectoRS_ResNet
+from mmdete.models.backbones import DetectoRS_ResNet
 
 
 def test_detectorrs_resnet_backbone():

@@ -5,8 +5,8 @@ import torch
 from mmcv.parallel import collate
 from mmcv.utils import build_from_cfg
 
-from mmdet.datasets.builder import PIPELINES
-from mmdet.models import build_detector
+from mmdete.datasets.builder import PIPELINES
+from mmdete.models import build_detector
 
 
 def model_aug_test_template(cfg_file):

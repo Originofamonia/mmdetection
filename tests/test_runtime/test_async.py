@@ -8,10 +8,10 @@ import asynctest
 import mmcv
 import torch
 
-from mmdet.apis import async_inference_detector, init_detector
+from mmdete.apis import async_inference_detector, init_detector
 
 if sys.version_info >= (3, 7):
-    from mmdet.utils.contextmanagers import concurrent
+    from mmdete.utils.contextmanagers import concurrent
 
 
 class AsyncTestCase(asynctest.TestCase):

@@ -3,8 +3,8 @@ import numpy as np
 import pytest
 import torch
 
-from mmdet.core import bbox2roi
-from mmdet.models.roi_heads.bbox_heads import BBoxHead
+from mmdete.core import bbox2roi
+from mmdete.models.roi_heads.bbox_heads import BBoxHead
 from .utils import _dummy_bbox_sampling
 
 
@@ -87,7 +87,7 @@ def test_bbox_head_get_bboxes(num_sample):
 
 def test_refine_boxes():
     """Mirrors the doctest in
-    ``mmdet.models.bbox_heads.bbox_head.BBoxHead.refine_boxes`` but checks for
+    ``mmdete.models.bbox_heads.bbox_head.BBoxHead.refine_boxes`` but checks for
     multiple values of n_roi / n_img."""
     self = BBoxHead(reg_class_agnostic=True)
 
@@ -210,10 +210,10 @@ def test_refine_boxes():
 
 def _demodata_refine_boxes(n_roi, n_img, rng=0):
     """Create random test data for the
-    ``mmdet.models.bbox_heads.bbox_head.BBoxHead.refine_boxes`` method."""
+    ``mmdete.models.bbox_heads.bbox_head.BBoxHead.refine_boxes`` method."""
     import numpy as np
-    from mmdet.core.bbox.demodata import random_boxes
-    from mmdet.core.bbox.demodata import ensure_rng
+    from mmdete.core.bbox.demodata import random_boxes
+    from mmdete.core.bbox.demodata import ensure_rng
     try:
         import kwarray
     except ImportError:

@@ -1,7 +1,7 @@
 import torch
 from mmcv import ConfigDict
 
-from mmdet.models.dense_heads import DETRHead
+from mmdete.models.dense_heads import DETRHead
 
 
 def test_detr_head_loss():

@@ -2,9 +2,9 @@ import numpy as np
 import pytest
 import torch
 
-from mmdet.core.bbox import distance2bbox
-from mmdet.core.mask.structures import BitmapMasks, PolygonMasks
-from mmdet.core.utils import mask2ndarray
+from mmdete.core.bbox import distance2bbox
+from mmdete.core.mask.structures import BitmapMasks, PolygonMasks
+from mmdete.core.utils import mask2ndarray
 
 
 def dummy_raw_polygon_masks(size):

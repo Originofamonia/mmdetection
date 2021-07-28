@@ -4,8 +4,8 @@ import os.path as osp
 import mmcv
 import numpy as np
 
-from mmdet.datasets.pipelines import (LoadImageFromFile, LoadImageFromWebcam,
-                                      LoadMultiChannelImageFromFiles)
+from mmdete.datasets.pipelines import (LoadImageFromFile, LoadImageFromWebcam,
+                                       LoadMultiChannelImageFromFiles)
 
 
 class TestLoading:

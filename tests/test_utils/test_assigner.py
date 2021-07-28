@@ -6,10 +6,10 @@ CommandLine:
 """
 import torch
 
-from mmdet.core.bbox.assigners import (ApproxMaxIoUAssigner,
-                                       CenterRegionAssigner, HungarianAssigner,
-                                       MaxIoUAssigner, PointAssigner,
-                                       UniformAssigner)
+from mmdete.core.bbox.assigners import (ApproxMaxIoUAssigner,
+                                        CenterRegionAssigner, HungarianAssigner,
+                                        MaxIoUAssigner, PointAssigner,
+                                        UniformAssigner)
 
 
 def test_max_iou_assigner():
@@ -279,7 +279,7 @@ def test_approx_iou_assigner_with_empty_boxes_and_gt():
 
 def test_random_assign_result():
     """Test random instantiation of assign result to catch corner cases."""
-    from mmdet.core.bbox.assigners.assign_result import AssignResult
+    from mmdete.core.bbox.assigners.assign_result import AssignResult
     AssignResult.random()
 
     AssignResult.random(num_gts=0, num_preds=0)

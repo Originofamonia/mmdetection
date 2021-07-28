@@ -77,7 +77,7 @@ We recommend you to install MMDetection with [MIM](https://github.com/open-mmlab
 
 ```shell
 pip install openmim
-mim install mmdet
+mim install mmdete
 ```
 
 MIM can automatically install OpenMMLab projects and their requirements.
@@ -129,7 +129,7 @@ Or, you can install MMDetection manually:
     Or, you can simply install mmdetection with the following commands:
 
     ```shell
-    pip install mmdet
+    pip install mmdete
     ```
 
 **Note:**
@@ -224,7 +224,7 @@ PYTHONPATH="$(dirname $0)/..":$PYTHONPATH
 To verify whether MMDetection and the required environment are installed correctly, we can run sample Python code to initialize a detector and run inference a demo image:
 
 ```python
-from mmdet.apis import init_detector, inference_detector
+from mmdete.apis import init_detector, inference_detector
 
 config_file = 'configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py'
 # download the checkpoint from model zoo and put it in `checkpoints/`

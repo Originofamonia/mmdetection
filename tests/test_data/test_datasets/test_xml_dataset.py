@@ -1,6 +1,6 @@
 import pytest
 
-from mmdet.datasets import DATASETS
+from mmdete.datasets import DATASETS
 
 
 def test_xml_dataset():

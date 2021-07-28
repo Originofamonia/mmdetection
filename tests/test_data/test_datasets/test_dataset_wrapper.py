@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 
 import numpy as np
 
-from mmdet.datasets import (ClassBalancedDataset, ConcatDataset, CustomDataset,
-                            RepeatDataset)
+from mmdete.datasets import (ClassBalancedDataset, ConcatDataset, CustomDataset,
+                             RepeatDataset)
 
 
 def test_dataset_wrapper():

@@ -333,7 +333,7 @@ dataset_A_train = dict(
     )
 ```
 
-You may refer to [source code](../../mmdet/datasets/dataset_wrappers.py) for details.
+You may refer to [source code](../../mmdete/datasets/dataset_wrappers.py) for details.
 
 ### Concatenate dataset
 

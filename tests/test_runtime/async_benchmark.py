@@ -6,10 +6,10 @@ import urllib
 import mmcv
 import torch
 
-from mmdet.apis import (async_inference_detector, inference_detector,
-                        init_detector)
-from mmdet.utils.contextmanagers import concurrent
-from mmdet.utils.profiling import profile_time
+from mmdete.apis import (async_inference_detector, inference_detector,
+                         init_detector)
+from mmdete.utils.contextmanagers import concurrent
+from mmdete.utils.profiling import profile_time
 
 
 async def main():

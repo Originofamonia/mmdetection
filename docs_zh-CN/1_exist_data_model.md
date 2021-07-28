@@ -17,7 +17,7 @@ MMDetection 在 [Model Zoo](https://mmdetection.readthedocs.io/en/latest/model_z
 MMDetection 为在图片上推理提供了 Python 的高层编程接口。下面是建立模型和在图像或视频上进行推理的例子。
 
 ```python
-from mmdet.apis import init_detector, inference_detector
+from mmdete.apis import init_detector, inference_detector
 import mmcv
 
 # 指定模型的配置文件和 checkpoint 文件路径
@@ -52,8 +52,8 @@ jupyter notebook 上的演示样例在 [demo/inference_demo.ipynb](https://githu
 ```python
 import asyncio
 import torch
-from mmdet.apis import init_detector, async_inference_detector
-from mmdet.utils.contextmanagers import concurrent
+from mmdete.apis import init_detector, async_inference_detector
+from mmdete.utils.contextmanagers import concurrent
 
 async def main():
     config_file = 'configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py'

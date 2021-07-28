@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import YOLOFHead
+from mmdete.models.dense_heads import YOLOFHead
 
 
 def test_yolof_head_loss():

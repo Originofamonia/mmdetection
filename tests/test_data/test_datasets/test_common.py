@@ -13,8 +13,8 @@ import torch.nn as nn
 from mmcv.runner import EpochBasedRunner
 from torch.utils.data import DataLoader
 
-from mmdet.core.evaluation import DistEvalHook, EvalHook
-from mmdet.datasets import DATASETS, CocoDataset, CustomDataset, build_dataset
+from mmdete.core.evaluation import DistEvalHook, EvalHook
+from mmdete.datasets import DATASETS, CocoDataset, CustomDataset, build_dataset
 
 
 def _create_dummy_coco_json(json_name):
@@ -217,8 +217,8 @@ def test_dataset_evaluation():
     tmp_dir.cleanup()
 
 
-@patch('mmdet.apis.single_gpu_test', MagicMock)
-@patch('mmdet.apis.multi_gpu_test', MagicMock)
+@patch('mmdete.apis.single_gpu_test', MagicMock)
+@patch('mmdete.apis.multi_gpu_test', MagicMock)
 @pytest.mark.parametrize('EvalHookParam', (EvalHook, DistEvalHook))
 def test_evaluation_hook(EvalHookParam):
     # create dummy data

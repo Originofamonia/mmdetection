@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import torch
 
-from mmdet.core import BboxOverlaps2D, bbox_overlaps
+from mmdete.core import BboxOverlaps2D, bbox_overlaps
 
 
 def test_bbox_overlaps_2d(eps=1e-7):

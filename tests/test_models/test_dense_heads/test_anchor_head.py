@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import AnchorHead
+from mmdete.models.dense_heads import AnchorHead
 
 
 def test_anchor_head_loss():

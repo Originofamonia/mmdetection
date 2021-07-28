@@ -3,7 +3,7 @@ import torch
 from torch.nn.modules import GroupNorm
 from torch.nn.modules.batchnorm import _BatchNorm
 
-from mmdet.models.backbones.mobilenet_v2 import MobileNetV2
+from mmdete.models.backbones.mobilenet_v2 import MobileNetV2
 from .utils import check_norm_state, is_block, is_norm
 
 

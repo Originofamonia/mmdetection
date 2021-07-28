@@ -1,8 +1,8 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads.autoassign_head import AutoAssignHead
-from mmdet.models.dense_heads.paa_head import levels_to_images
+from mmdete.models.dense_heads.autoassign_head import AutoAssignHead
+from mmdete.models.dense_heads.paa_head import levels_to_images
 
 
 def test_autoassign_head_loss():

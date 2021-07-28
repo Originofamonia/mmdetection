@@ -7,7 +7,7 @@ import pytest
 from mmcv import Config, ProgressBar
 from mmcv.runner import _load_checkpoint
 
-from mmdet.models import build_detector
+from mmdete.models import build_detector
 
 
 def _get_config_directory():
@@ -17,8 +17,8 @@ def _get_config_directory():
         repo_dpath = dirname(dirname(__file__))
     except NameError:
         # For IPython development when this __file__ is not defined
-        import mmdet
-        repo_dpath = dirname(dirname(mmdet.__file__))
+        import mmdete
+        repo_dpath = dirname(dirname(mmdete.__file__))
     config_dpath = join(repo_dpath, 'configs')
     if not exists(config_dpath):
         raise Exception('Cannot find config path')

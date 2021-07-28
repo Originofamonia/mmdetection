@@ -11,11 +11,11 @@ from mmcv import Config, DictAction
 from mmcv.runner import get_dist_info, init_dist
 from mmcv.utils import get_git_hash
 
-from mmdet import __version__
-from mmdet.apis import set_random_seed, train_detector
-from mmdet.datasets import build_dataset
-from mmdet.models import build_detector
-from mmdet.utils import collect_env, get_root_logger
+from mmdete import __version__
+from mmdete.apis import set_random_seed, train_detector
+from mmdete.datasets import build_dataset
+from mmdete.models import build_detector
+from mmdete.utils import collect_env, get_root_logger
 
 
 def parse_args():
@@ -172,7 +172,7 @@ def main():
         val_dataset.pipeline = cfg.data.train.pipeline
         datasets.append(build_dataset(val_dataset))
     if cfg.checkpoint_config is not None:
-        # save mmdet version, config file content and class names in
+        # save mmdete version, config file content and class names in
         # checkpoints as meta data
         cfg.checkpoint_config.meta = dict(
             mmdet_version=__version__ + get_git_hash()[:7],

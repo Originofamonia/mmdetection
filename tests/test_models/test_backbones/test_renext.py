@@ -1,8 +1,8 @@
 import pytest
 import torch
 
-from mmdet.models.backbones import ResNeXt
-from mmdet.models.backbones.resnext import Bottleneck as BottleneckX
+from mmdete.models.backbones import ResNeXt
+from mmdete.models.backbones.resnext import Bottleneck as BottleneckX
 from .utils import is_block
 
 

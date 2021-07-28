@@ -14,8 +14,8 @@ def _get_config_directory():
         repo_dpath = dirname(dirname(dirname(__file__)))
     except NameError:
         # For IPython development when this __file__ is not defined
-        import mmdet
-        repo_dpath = dirname(dirname(mmdet.__file__))
+        import mmdete
+        repo_dpath = dirname(dirname(mmdete.__file__))
     config_dpath = join(repo_dpath, 'configs')
     if not exists(config_dpath):
         raise Exception('Cannot find config path')
@@ -74,7 +74,7 @@ def test_bbox_loss_compatibility(loss_bbox):
 
     cfg_model.roi_head.bbox_head.loss_bbox = loss_bbox
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(cfg_model)
 
     loss = detector.forward(imgs, img_metas, return_loss=True, **mm_inputs)
@@ -113,7 +113,7 @@ def test_cls_loss_compatibility(loss_cls):
     # for loss_cls in loss_clses:
     cfg_model.roi_head.bbox_head.loss_cls = loss_cls
 
-    from mmdet.models import build_detector
+    from mmdete.models import build_detector
     detector = build_detector(cfg_model)
 
     loss = detector.forward(imgs, img_metas, return_loss=True, **mm_inputs)
@@ -137,7 +137,7 @@ def _demo_mm_inputs(input_shape=(1, 3, 300, 300),
         num_classes (int):
             number of different labels a box might have
     """
-    from mmdet.core import BitmapMasks
+    from mmdete.core import BitmapMasks
 
     (N, C, H, W) = input_shape
 

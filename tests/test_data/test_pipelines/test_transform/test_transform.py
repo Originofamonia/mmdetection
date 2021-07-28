@@ -7,8 +7,8 @@ import pytest
 import torch
 from mmcv.utils import build_from_cfg
 
-from mmdet.core.evaluation.bbox_overlaps import bbox_overlaps
-from mmdet.datasets.builder import PIPELINES
+from mmdete.core.evaluation.bbox_overlaps import bbox_overlaps
+from mmdete.datasets.builder import PIPELINES
 
 
 def test_resize():

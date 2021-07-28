@@ -8,7 +8,7 @@ import numpy as np
 import pytest
 import torch
 
-from mmdet.core import visualization as vis
+from mmdete.core import visualization as vis
 
 
 def test_color():

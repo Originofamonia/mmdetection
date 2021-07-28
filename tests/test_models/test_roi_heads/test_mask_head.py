@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.roi_heads.mask_heads import FCNMaskHead, MaskIoUHead
+from mmdete.models.roi_heads.mask_heads import FCNMaskHead, MaskIoUHead
 from .utils import _dummy_bbox_sampling
 
 
@@ -28,7 +28,7 @@ def test_mask_head_loss():
 
     # create dummy mask
     import numpy as np
-    from mmdet.core import BitmapMasks
+    from mmdete.core import BitmapMasks
     dummy_mask = np.random.randint(0, 2, (1, 160, 240), dtype=np.uint8)
     gt_masks = [BitmapMasks(dummy_mask, 160, 240)]
 

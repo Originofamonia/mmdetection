@@ -1,8 +1,8 @@
 import pytest
 import torch
 
-from mmdet.core.bbox.coder import (DeltaXYWHBBoxCoder, TBLRBBoxCoder,
-                                   YOLOBBoxCoder)
+from mmdete.core.bbox.coder import (DeltaXYWHBBoxCoder, TBLRBBoxCoder,
+                                    YOLOBBoxCoder)
 
 
 def test_yolo_bbox_coder():

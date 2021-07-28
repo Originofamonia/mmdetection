@@ -1,4 +1,4 @@
-from mmdet import digit_version
+from mmdete import digit_version
 
 
 def test_version_check():

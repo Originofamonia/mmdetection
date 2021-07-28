@@ -2,17 +2,17 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from mmdet.datasets import DATASETS
+from mmdete.datasets import DATASETS
 
 
-@patch('mmdet.datasets.CocoDataset.load_annotations', MagicMock())
-@patch('mmdet.datasets.CustomDataset.load_annotations', MagicMock())
-@patch('mmdet.datasets.XMLDataset.load_annotations', MagicMock())
-@patch('mmdet.datasets.CityscapesDataset.load_annotations', MagicMock())
-@patch('mmdet.datasets.CocoDataset._filter_imgs', MagicMock)
-@patch('mmdet.datasets.CustomDataset._filter_imgs', MagicMock)
-@patch('mmdet.datasets.XMLDataset._filter_imgs', MagicMock)
-@patch('mmdet.datasets.CityscapesDataset._filter_imgs', MagicMock)
+@patch('mmdete.datasets.CocoDataset.load_annotations', MagicMock())
+@patch('mmdete.datasets.CustomDataset.load_annotations', MagicMock())
+@patch('mmdete.datasets.XMLDataset.load_annotations', MagicMock())
+@patch('mmdete.datasets.CityscapesDataset.load_annotations', MagicMock())
+@patch('mmdete.datasets.CocoDataset._filter_imgs', MagicMock)
+@patch('mmdete.datasets.CustomDataset._filter_imgs', MagicMock)
+@patch('mmdete.datasets.XMLDataset._filter_imgs', MagicMock)
+@patch('mmdete.datasets.CityscapesDataset._filter_imgs', MagicMock)
 @pytest.mark.parametrize('dataset',
                          ['CocoDataset', 'VOCDataset', 'CityscapesDataset'])
 def test_custom_classes_override_default(dataset):

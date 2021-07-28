@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import VFNetHead
+from mmdete.models.dense_heads import VFNetHead
 
 
 def test_vfnet_head_loss():

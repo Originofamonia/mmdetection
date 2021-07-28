@@ -4,9 +4,9 @@ import mmcv
 from mmcv import Config, DictAction
 from mmcv.parallel import MMDataParallel
 
-from mmdet.apis import single_gpu_test
-from mmdet.datasets import (build_dataloader, build_dataset,
-                            replace_ImageToTensor)
+from mmdete.apis import single_gpu_test
+from mmdete.datasets import (build_dataloader, build_dataset,
+                             replace_ImageToTensor)
 
 
 def parse_args():
@@ -108,11 +108,11 @@ def main():
         shuffle=False)
 
     if args.backend == 'onnxruntime':
-        from mmdet.core.export.model_wrappers import ONNXRuntimeDetector
+        from mmdete.core.export.model_wrappers import ONNXRuntimeDetector
         model = ONNXRuntimeDetector(
             args.model, class_names=dataset.CLASSES, device_id=0)
     elif args.backend == 'tensorrt':
-        from mmdet.core.export.model_wrappers import TensorRTDetector
+        from mmdete.core.export.model_wrappers import TensorRTDetector
         model = TensorRTDetector(
             args.model, class_names=dataset.CLASSES, device_id=0)
 

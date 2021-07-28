@@ -193,7 +193,7 @@ python tools/deployment/mmdet2torchserve.py ${CONFIG_FILE} ${CHECKPOINT_FILE} \
 ### 2. Build `mmdet-serve` docker image
 
 ```shell
-docker build -t mmdet-serve:latest docker/serve/
+docker build -t mmdete-serve:latest docker/serve/
 ```
 
 ### 3. Run `mmdet-serve`
@@ -210,7 +210,7 @@ docker run --rm \
 --gpus device=0 \
 -p8080:8080 -p8081:8081 -p8082:8082 \
 --mount type=bind,source=$MODEL_STORE,target=/home/model-server/model-store \
-mmdet-serve:latest
+mmdete-serve:latest
 ```
 
 [Read the docs](https://github.com/pytorch/serve/blob/072f5d088cce9bb64b2a18af065886c9b01b317b/docs/rest_api.md/) about the Inference (8080), Management (8081) and Metrics (8082) APis

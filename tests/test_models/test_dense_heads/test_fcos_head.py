@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import FCOSHead
+from mmdete.models.dense_heads import FCOSHead
 
 
 def test_fcos_head_loss():

@@ -1,7 +1,7 @@
 import torch
 
-from mmdet.core.evaluation.bbox_overlaps import bbox_overlaps
-from mmdet.models.dense_heads import CornerHead
+from mmdete.core.evaluation.bbox_overlaps import bbox_overlaps
+from mmdete.models.dense_heads import CornerHead
 
 
 def test_corner_head_loss():

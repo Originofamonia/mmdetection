@@ -1,7 +1,7 @@
 import mmcv
 import torch
 
-from mmdet.models.dense_heads import YOLACTHead, YOLACTProtonet, YOLACTSegmHead
+from mmdete.models.dense_heads import YOLACTHead, YOLACTProtonet, YOLACTSegmHead
 
 
 def test_yolact_head_loss():

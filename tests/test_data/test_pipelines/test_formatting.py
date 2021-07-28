@@ -2,7 +2,7 @@ import os.path as osp
 
 from mmcv.utils import build_from_cfg
 
-from mmdet.datasets.builder import PIPELINES
+from mmdete.datasets.builder import PIPELINES
 
 
 def test_default_format_bundle():

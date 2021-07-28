@@ -21,11 +21,11 @@ from .custom import CustomDataset
 
 @DATASETS.register_module()
 class Chestxray14Dataset(CustomDataset):
-    CLASSES = (  # 15 classes (14 diseases and "no findings")
+    CLASSES = (  # 16 classes (14 diseases and "no findings")
         "No findings", "Atelectasis", "Consolidation", "Infiltration",
         "Pneumothorax", "Edema", "Emphysema", "Fibrosis", "Effusion",
         "Pneumonia", "Pleural_thickening", "Cardiomegaly", "Nodule",
-        "Mass", "Hernia",
+        "Mass", "Hernia", "Calcification", "Fracture",
     )
 
     def load_annotations(self, ann_file):  # done
